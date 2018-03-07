@@ -1,0 +1,45 @@
+------------------------
+Iteración 1: Crear Nuevo Proyecto 
+---------------------------
+Nuevo proyecto
+Asp.net web MVC4 C#
+Ubicación del proyecto
+Vacio -z Razor
+Aceptar
+Crear controlador HomeController
+
+seleccionamos Index() clic derecho
+agregar vista
+
+razon 
+quitar el check de vista maestra
+borrar
+@{
+    Layout = null;
+}
+escribir hola mundo 
+ejecutar y se puede visualizar en el navegador
+
+------------------------
+Iteración 2:  
+---------------------------
+Nuevo proyecto Mvc4App2
+Asp.net web MVC4 C#
+Ubicación del proyecto
+Aplicación de Internet -z Razor
+Clic derecho sobre Model
+agregar clase Persona.cs
+Agregar controlador PersonaController
+Agregar vista clic derecho en Index de PersonaController
+Persona (Mvc4App2.Models)
+List
+ir a Views/Shared/_Layout.cshtml
+editar
+ <ul id="menu">
+    <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+    <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
+    <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
+    <li>@Html.ActionLink("Listado", "Index", "Persona")</li>
+</ul>
+Primero nombre, Segundo metodo, Tercero Controlador
+"Listado", "Index", "Persona"
