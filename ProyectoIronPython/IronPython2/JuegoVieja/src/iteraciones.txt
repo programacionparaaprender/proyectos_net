@@ -1,0 +1,16 @@
+iteraciones:
+
+-------------------
+Iteración 0
+----------------------
+después de instalar ultima versión de python
+python -m pip install virtualenv
+python -m venv test19
+
+-------------------
+Iteración 1: Instalar ironpython con pip
+----------------------
+Documents\proyectos_python\curso-python\test19\Scripts\activate
+Documents\proyectos_python\proyectos_pygame\MisionClon2\src\main.py
+
+python -m pip install pythonnet
