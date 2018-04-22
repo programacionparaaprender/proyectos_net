@@ -1,0 +1,28 @@
+
+
+
+------------------------
+Iteración 1: Crear Nuevo Proyecto 
+---------------------------
+Nuevo proyecto
+Asp.net web MVC4 C#
+Ubicación del proyecto
+Vacio -z Razor
+Aceptar
+Crear controlador HomeController
+
+seleccionamos Index() clic derecho
+agregar vista
+
+razon 
+quitar el check de vista maestra
+borrar
+@{
+    Layout = null;
+}
+escribir hola mundo 
+ejecutar y se puede visualizar en el navegador
+
+------------------------
+Iteración 2:  
+---------------------------
