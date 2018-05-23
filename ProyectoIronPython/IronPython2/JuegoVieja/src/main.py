@@ -1,68 +1,52 @@
 import clr
 clr.AddReference("System.Drawing")
 clr.AddReference("System.Windows.Forms")
-from System.Drawing import (Pens, Color, Font, FontStyle, Point, Brushes)
-from System.Drawing import Size, Pen
-from System.Drawing.Drawing2D import DashStyle
-from System.Windows.Forms import Application, Form, PaintEventArgs, Button
-from System.Windows.Forms import MessageBox, Label
+from System.Windows.Forms import Application, Form
+from System.Windows.Forms import MessageBox
+from Boton import Boton
+from Vieja import Vieja
+from Inteligencia import Inteligencia
 
 
+#ocho posibles combinaciones x, +, |, -
+#1 queda en tres combinaciones
+#5 queda en cuatro combinaciones
+#4 queda en dos combinaciones
 class HelloWorldForm(Form):
     def __init__(self):
+        self.id = 1
         self.Text = 'Hello World'
-        self.Height = 500
-        self.Width = 500
-        button = Button()
-        button.Text = "Click Me"
-        button.Location = Point(50, 100)
-        button.Click += self.buttonPressed
+        self.Height = 200
+        self.Width = 200
+        self.botongroup = []
+        self.generarboton(1, 0, 0, 50, 50, "1")
+        self.generarboton(2, 50, 0, 50, 50, "2")
+        self.generarboton(3, 100, 0, 50, 50, "3")
+        self.generarboton(4, 0, 50, 50, 50, "4")
+        self.generarboton(5, 50, 50, 50, 50, "5")
+        self.generarboton(6, 100, 50, 50, 50, "6")
+        self.generarboton(7, 0, 100, 50, 50, "7")
+        self.generarboton(8, 50, 100, 50, 50, "8")
+        self.generarboton(9, 100, 100, 50, 50, "9")
+        self.vieja = Vieja()
+        self.inteligencia = Inteligencia(2, self.vieja)
+        self.inteligencia.agregar(self)
+        self.turno = 1
+
+    def generarboton(self, id, x, y, w, h, text):
+        button = Boton(id, x, y, w, h, text)
+        button.agregar(self)
+        self.botongroup.append(button)
         self.Controls.Add(button)
 
-        self.label = Label()
-        self.label.Text = "Please Click Me"
-        self.label.Location = Point(50, 50)
-        self.label.Height = 30
-        self.label.Width = 200
-        self.Controls.Add(self.label)
-        #self.Paint += self.PaintEventHandler(self.Form1_Paint)
-        self.Paint += self.Form1_Paint
-        self.CenterToScreen()
+    def actualizar(self, id):
+        if (self.turno is 1):
+            MessageBox.Show("self.label.Text " + str(id))
+        self.vieja.actualizar(1, id)
+        self.inteligencia.jugar()
 
-    def OnPaint(self, sender, e):
-        g = e.Graphics
-
-        pen = Pen(Color.Black, 1)
-        pen.DashStyle = DashStyle.Dot
-
-        g.DrawLine(pen, 20, 40, 250, 40)
-
-        pen.DashStyle = DashStyle.DashDot
-        g.DrawLine(pen, 20, 80, 250, 80)
-
-        pen.DashStyle = DashStyle.Dash
-        g.DrawLine(pen, 20, 120, 250, 120)
-
-        pen.DashStyle = DashStyle.DashDotDot
-        g.DrawLine(pen, 20, 160, 250, 160)
-
-        pen.DashPattern = (6, 8, 1, 1, 1, 1, 1, 1)
-        g.DrawLine(pen, 20, 200, 250, 200)
-
-        pen.Dispose()
-        g.Dispose()
-
-    def buttonPressed(self, sender, args):
-        #print ('The label *used to say* :')
-        MessageBox.Show(self.label.Text)
-        #self.count += 1
-        #self.label.Text = "You have clicked me %s times." % self.count
-
-    def Form1_Paint(self, sender, e):
-        g = e.Graphics
-        texto = "This is a diagonal line drawn on the control"
-        g.DrawString(texto, Point(30, 30))
-        g.DrawLine(Pens.Red, 10, 10, 300, 10)
+    def getId(self):
+        return self.id
 
 
 form = HelloWorldForm()

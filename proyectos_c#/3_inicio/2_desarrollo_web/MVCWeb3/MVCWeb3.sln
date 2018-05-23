@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCWeb3", "MVCWeb3\MVCWeb3.csproj", "{DD9C413E-E070-4296-A23F-0FDE35D56D65}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DD9C413E-E070-4296-A23F-0FDE35D56D65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD9C413E-E070-4296-A23F-0FDE35D56D65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD9C413E-E070-4296-A23F-0FDE35D56D65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD9C413E-E070-4296-A23F-0FDE35D56D65}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = MVCWeb3\MVCWeb3.csproj
+	EndGlobalSection
+EndGlobal

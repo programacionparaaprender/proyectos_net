@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebMVC2", "WebMVC2\WebMVC2.csproj", "{5AFAB18A-12CE-48A4-B11C-E970ED0AFBDE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5AFAB18A-12CE-48A4-B11C-E970ED0AFBDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AFAB18A-12CE-48A4-B11C-E970ED0AFBDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AFAB18A-12CE-48A4-B11C-E970ED0AFBDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AFAB18A-12CE-48A4-B11C-E970ED0AFBDE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = WebMVC2\WebMVC2.csproj
+	EndGlobalSection
+EndGlobal
