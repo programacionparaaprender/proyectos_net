@@ -1,0 +1,44 @@
+
+Language
+Understend
+Inteligence
+Service
+
+https://mva.microsoft.com/es-mx/training-courses/introduccin-a-bots-18368?l=EgHgtLWeE_9311982333
+https://bots.botframework.com/bot?id=Bing
+https://dev.botframework.com/
+https://join.skype.com/bot/79eaad73-f046-4720-9bba-3a2c8e1b0e0b
+https://telegram.me/BingImageBot
+Bot Framework Emulator
+https://aka.ms/bf-bc-emulador
+http://github.com/Microsoft/botbuilder
+https://github.com/Microsoft/BotBuilder/tree/master/CSharp
+https://github.com/Microsoft/BotFramework-Emulator
+https://github.com/Microsoft/BotFramework-Emulator/releases
+https://channel9.msdn.com/Blogs/MVP-Azure/Installation-of-Bot-Framework-Preview-SDK-to-Visual-Studio-as-a-Template
+https://bots.botframework.com/
+https://www.nuget.org/
+https://www.nuget.org/packages/Microsoft.Bot.Builder/4.0.1-preview
+https://www.nuget.org/packages/Microsoft.Bot.Connector/3.15.2.2
+Install-Package Microsoft.Bot.Builder
+Install-Package Microsoft.Bot.Connector
+
+Conceptos:
+Channel: conexión con páginas sociales
+Bot Connector: Conecta al bot con uno o más canales
+Activity: El bot conector utiliza una actividad para intercambiar información entre bot
+y channel
+Message: Un mensaje es el tipo de actividad más común. Puede ser un mensaje un archivo
+Dialog: Un diálogo ayuda a organizar la lógica en su bot y gestiona el flujo de 
+conversación
+
+Rich Cards
+-------------
+Adaptative card
+Animation card
+Audio card
+Hero card
+Thumbnail card
+Receipt card
+Signin card
+Video card
