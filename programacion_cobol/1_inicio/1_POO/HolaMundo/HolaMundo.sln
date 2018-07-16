@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{535C04D7-A2A5-47C7-83E0-B340A995CD1F}") = "HolaMundo", "HolaMundo\HolaMundo.cblproj", "{9C436521-C8FB-4059-BD74-9EC320F33D67}"
+EndProject
+Project("{535C04D7-A2A5-47C7-83E0-B340A995CD1F}") = "HolaMundo2", "HolaMundo2\HolaMundo2.cblproj", "{E1C5B8A5-DEEE-42BF-9AA3-ECA3069C316D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9C436521-C8FB-4059-BD74-9EC320F33D67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C436521-C8FB-4059-BD74-9EC320F33D67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C436521-C8FB-4059-BD74-9EC320F33D67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C436521-C8FB-4059-BD74-9EC320F33D67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1C5B8A5-DEEE-42BF-9AA3-ECA3069C316D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1C5B8A5-DEEE-42BF-9AA3-ECA3069C316D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1C5B8A5-DEEE-42BF-9AA3-ECA3069C316D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1C5B8A5-DEEE-42BF-9AA3-ECA3069C316D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
