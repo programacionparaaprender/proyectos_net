@@ -5,6 +5,8 @@
 
     <div class="jumbotron">
         <button onclick="dowork()" class="btn btn-primary">DoWork</button>
+        <button onclick="dosquare()" class="btn btn-primary">DoSquare</button>
+        <input type="text" id="squareValue"/>
     </div>
     <script type="text/javascript">
         function dowork() {
@@ -14,6 +16,23 @@
                 type: "GET",
                 //data: { 'vals': val },
                 dataType: "json",
+                success: function (result) {
+                    alert(result);
+                },
+                //error: function (request, status, error) {
+                //    alert("Error: Could not delete");
+                //}
+            });
+        }
+        function dosquare() {
+            //alert("Hello");
+            var value = $('#squareValue').val();
+            $.ajax({
+                url: "Service/Service1.svc/Dosquare",
+                type: "POST",
+                data: JSON.stringify(value),
+                dataType: "json",
+                contentType: "application/json",
                 success: function (result) {
                     alert(result);
                 },
