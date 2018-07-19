@@ -23,5 +23,23 @@ namespace WebWCF1.Service
         {
             return value * value;
         }
+        public int DoAddValues(AddValues addValues)
+        {
+            return addValues.value1 + addValues.value2;
+        }
+    }
+
+    [DataContract]
+    public class AddValues
+    {
+        [DataMember]
+        public int value1 { get; set; }
+        [DataMember]
+        public int value2 { get; set; }
+        public AddValues()
+        {
+            value1 = 0;
+            value2 = 0;
+        }
     }
 }

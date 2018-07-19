@@ -7,7 +7,14 @@
         <button onclick="dowork()" class="btn btn-primary">DoWork</button>
         <button onclick="dosquare()" class="btn btn-primary">DoSquare</button>
         <input type="text" id="squareValue"/>
-    </div>
+
+        <h1>AddValues</h1>
+        <input type="text" id="addValue1"/>
+        <input type="text" id="addValue2"/>
+        <button onclick="doaddvalues()" class="btn btn-primary">DoAddValue</button>
+        
+
+    </h1>
     <script type="text/javascript">
         function dowork() {
             //alert("Hello");
@@ -28,7 +35,7 @@
             //alert("Hello");
             var value = $('#squareValue').val();
             $.ajax({
-                url: "Service/Service1.svc/Dosquare",
+                url: "Service/Service1.svc/DosAddValues",
                 type: "POST",
                 data: JSON.stringify(value),
                 dataType: "json",
@@ -36,9 +43,31 @@
                 success: function (result) {
                     alert(result);
                 },
-                //error: function (request, status, error) {
-                //    alert("Error: Could not delete");
-                //}
+                error: function (request, status, error) {
+                    alert("Error: Could not delete" + error);
+                }
+            });
+        }
+        function doaddvalues() {
+            //alert("Hello");
+            var value1 = $('#addValue1').val();
+            var value2 = $('#addValue2').val();
+            var addValues = {
+                "value1": value1,
+                "value2": value2
+            };
+            $.ajax({
+                url: "Service/Service1.svc/DoAddValues",
+                type: "POST",
+                data: JSON.stringify(addValues),
+                dataType: "json",
+                contentType: "application/json",
+                success: function (result) {
+                    alert(result);
+                },
+                error: function (request, status, error) {
+                    alert("Error: Could not delete" + error);
+                }
             });
         }
     </script>
