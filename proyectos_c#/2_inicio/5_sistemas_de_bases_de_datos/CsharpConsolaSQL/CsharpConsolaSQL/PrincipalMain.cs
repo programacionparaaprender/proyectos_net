@@ -8,6 +8,7 @@ using System.Data;
 //using System.Xml.Serialization.IXmlSerializable;
 using System.Collections;
 using System.Diagnostics;
+using System.Configuration;
 /*Error	1	El tipo 'System.Xml.Serialization.IXmlSerializable' 
 está definido en un ensamblado al que no se hace referencia. 
  * Debe agregar una referencia al ensamblado 'System.Xml, Version=4.0.0.0, 
@@ -19,7 +20,9 @@ namespace CsharpConsolaSQL
     public class PrincipalMain
     {
         static String cadena1 = @"Data Source=LUISALBERTO-PC\SQLEXPRESS;Initial Catalog=ClaseTaller;Integrated Security=True";
-        static String cadena = @"Data Source=LUISALBERTO-PC\SQLEXPRESS;Initial Catalog=ClaseTaller;User ID=LuisCorrea; Password=yose1342";
+        static String cadena2 = @"Data Source=LUISALBERTO-PC\SQLEXPRESS;Initial Catalog=ClaseTaller;User ID=LuisCorrea; Password=yose1342";
+        static String cadena = @"Data Source=BONE\SQLEXPRESS;Initial Catalog=TEST;Integrated Security=True";
+        /*static String cadenaConexion = ConfigurationManager.ConnectionStrings("CadenaConexion").ConnectionString();*/
         public static void eliminar()
         {
             try
@@ -38,7 +41,57 @@ namespace CsharpConsolaSQL
             {
             }
         }
+        public static void MostrarEstructura2()
+        {
+            String cadenaConexion = ConfigurationManager.ConnectionStrings["CadenaConexion"].ConnectionString;
+            try
+            {
+                SqlConnection conexion = new SqlConnection(cadenaConexion);
+                conexion.Open();
+                SqlDataReader myReader = null;
+                String strCadSQL = @"SELECT * FROM Departamento";
+                SqlCommand myCommand = new SqlCommand(strCadSQL, conexion);
+                myReader = myCommand.ExecuteReader();
+                Console.WriteLine("Datos de tabla");
+                while (myReader.Read())
+                {
+                    Console.WriteLine(myReader.GetString(1) + " " + myReader.GetString(2));
+                }
+                Console.WriteLine("  ...OK. Operacion exitosa!");
+                conexion.Close();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+        }
         public static void MostrarEstructura()
+        {
+            //String cad = @"Data Source=BONE\SQLEXPRESS;Initial Catalog=TEST;Integrated Security=True";
+            String cadenaConexion = ConfigurationManager.ConnectionStrings["CadenaConexion"].ConnectionString;
+
+            try
+            {
+                SqlConnection conexion = new SqlConnection(cadenaConexion);
+                conexion.Open();
+                SqlDataReader myReader = null;
+                String strCadSQL = @"SELECT * FROM dbo.usuarios";
+                SqlCommand myCommand = new SqlCommand(strCadSQL, conexion);
+                myReader = myCommand.ExecuteReader();
+                Console.WriteLine("Datos de tabla");
+                while (myReader.Read())
+                {
+                    Console.WriteLine(myReader.GetString(1) + " " + myReader.GetString(2));
+                }
+                Console.WriteLine("  ...OK. Operacion exitosa!");
+                conexion.Close();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+        }
+        public static void MostrarEstructura3()
         { 
              try
              {
@@ -95,10 +148,10 @@ namespace CsharpConsolaSQL
         }
         public static void Main()
         {
-            insertar();
+            //insertar();
             MostrarEstructura();
-            eliminar();
-            MostrarEstructura();
+            //eliminar();
+            //MostrarEstructura();
             Console.ReadKey(true);
         }
 
