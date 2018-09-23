@@ -5,6 +5,8 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using System.ServiceModel.Activation;
+using System.Configuration;
+using System.Data.SqlClient;
 
 namespace WebWCF1.Service
 {
@@ -17,6 +19,30 @@ namespace WebWCF1.Service
     {
         public String DoWork()
         {
+            //String cad = @"Data Source=BONE\SQLEXPRESS;Initial Catalog=TEST;Integrated Security=True";
+            String cadenaConexion = ConfigurationManager.ConnectionStrings["CadenaConexion"].ConnectionString;
+
+            try
+            {
+                SqlConnection conexion = new SqlConnection(cadenaConexion);
+                conexion.Open();
+                SqlDataReader myReader = null;
+                String strCadSQL = @"SELECT * FROM dbo.usuarios";
+                SqlCommand myCommand = new SqlCommand(strCadSQL, conexion);
+                myReader = myCommand.ExecuteReader();
+                Console.WriteLine("Datos de tabla");
+                while (myReader.Read())
+                {
+                    return myReader.GetString(1) + " " + myReader.GetString(2);
+                }
+                Console.WriteLine("  ...OK. Operacion exitosa!");
+                conexion.Close();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+
             return "Hello REST WCF Service :)";
         }
         public int DoSquare(int value)
