@@ -28,6 +28,7 @@ Partial Class Form1
         Me.txtName = New System.Windows.Forms.TextBox()
         Me.dtgwTable = New System.Windows.Forms.DataGridView()
         Me.btnGuardarDB = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.dtgwTable, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -75,18 +76,28 @@ Partial Class Form1
         '
         'btnGuardarDB
         '
-        Me.btnGuardarDB.Location = New System.Drawing.Point(12, 247)
+        Me.btnGuardarDB.Location = New System.Drawing.Point(12, 269)
         Me.btnGuardarDB.Name = "btnGuardarDB"
         Me.btnGuardarDB.Size = New System.Drawing.Size(129, 23)
         Me.btnGuardarDB.TabIndex = 5
         Me.btnGuardarDB.Text = "Guardar en BD"
         Me.btnGuardarDB.UseVisualStyleBackColor = True
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(13, 240)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(128, 23)
+        Me.Button1.TabIndex = 6
+        Me.Button1.Text = "Generar Excel"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(552, 316)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btnGuardarDB)
         Me.Controls.Add(Me.dtgwTable)
         Me.Controls.Add(Me.txtName)
@@ -107,4 +118,5 @@ Partial Class Form1
     Friend WithEvents txtName As TextBox
     Friend WithEvents dtgwTable As DataGridView
     Friend WithEvents btnGuardarDB As Button
+    Friend WithEvents Button1 As Button
 End Class
