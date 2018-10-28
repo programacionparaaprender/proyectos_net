@@ -4,9 +4,38 @@ Imports System.Data.SqlClient
 Module Module1
     Dim cadena As String = "Data Source=BONE\SQLEXPRESS;Initial Catalog=TEST;Integrated Security=True"
     Sub Main()
-        MostrarEstructuraFuncion()
-        insertarProcedure()
+        MostrarEstructuraProcedimiento()
+        'MostrarEstructuraFuncion()
+        'insertarProcedure()
         Console.ReadKey()
+    End Sub
+    Public Sub MostrarEstructuraProcedimiento()
+        Dim cadenaConexion As String = ConfigurationManager.ConnectionStrings("CadenaConexion").ConnectionString
+
+        Try
+            Dim conexion As SqlConnection = New SqlConnection(cadenaConexion)
+            conexion.Open()
+            Dim myReader As SqlDataReader = Nothing
+            'Dim strCadSQL As String = "pa_mostrarUsuarios"
+            'Dim myCommand As SqlCommand '= New SqlCommand(strCadSQL, conexion)
+            Dim myCommand As SqlCommand = New SqlCommand
+            myCommand.CommandText = "pa_mostrarUsuarios"
+            myCommand.CommandType = CommandType.StoredProcedure
+            myCommand.Connection = conexion
+            myCommand.Parameters.AddWithValue("@id", 0)
+            'Dim myCommand As SqlCommand = New SqlCommand(strCadSQL, conexion)
+            myReader = myCommand.ExecuteReader()
+            Console.WriteLine("Datos de tabla")
+
+            While myReader.Read()
+                Console.WriteLine(myReader.GetString(1) & " " + myReader.GetString(2))
+            End While
+
+            Console.WriteLine("  ...OK. Operacion exitosa!")
+            conexion.Close()
+        Catch e As Exception
+            Console.WriteLine(e.ToString())
+        End Try
     End Sub
     Public Sub MostrarEstructuraFuncion()
         Dim cadenaConexion As String = ConfigurationManager.ConnectionStrings("CadenaConexion").ConnectionString
