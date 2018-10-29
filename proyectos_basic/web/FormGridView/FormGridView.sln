@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "FormGridView", "FormGridView\FormGridView.vbproj", "{D626B2F7-8414-4AA2-B1E1-58EED96B495B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D626B2F7-8414-4AA2-B1E1-58EED96B495B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D626B2F7-8414-4AA2-B1E1-58EED96B495B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D626B2F7-8414-4AA2-B1E1-58EED96B495B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D626B2F7-8414-4AA2-B1E1-58EED96B495B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

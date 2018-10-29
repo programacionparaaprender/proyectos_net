@@ -1,0 +1,4 @@
+s  string
+i  integer
+d  decimal
+dt datatable
