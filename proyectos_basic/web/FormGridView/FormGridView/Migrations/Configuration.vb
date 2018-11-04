@@ -3,10 +3,11 @@ Imports System.Data.Entity
 Imports System.Data.Entity.Migrations
 Imports System.Linq
 Imports System.Collections.Generic
+Imports FormGridView.Models
 'Imports System.Collections.Generic.IEnumerable
 Namespace Migrations
 
-    Friend NotInheritable Class Configuration 
+    Friend NotInheritable Class Configuration
         Inherits DbMigrationsConfiguration(Of MyDBContext)
 
         Public Sub New()

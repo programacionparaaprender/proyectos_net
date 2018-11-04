@@ -64,6 +64,8 @@
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -91,6 +93,8 @@
     <Compile Include="Dialogo1.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Entities\Details.vb" />
+    <Compile Include="Entities\MyModel.vb" />
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>

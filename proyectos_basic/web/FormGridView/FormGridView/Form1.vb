@@ -1,12 +1,14 @@
 ﻿Imports System.Configuration
 Imports System.Data.SqlClient
-
+Imports FormGridView.Models
+Imports FormGridView.Entities
 Public Class Form1
 
     Private dt As New DataTable
     Private dr As DataRow
     Private campoSeleccionado As Integer = 0
     Private cadenaConexion As String = ConfigurationManager.ConnectionStrings("CadenaConexion").ConnectionString()
+    Private myDetail As Details
     Public Sub New()
 
         ' This call is required by the designer.
@@ -116,6 +118,7 @@ Public Class Form1
     End Sub
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         MostrarEstructuraProcedimiento()
+        Me.cargardgv2()
     End Sub
 
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
@@ -152,5 +155,10 @@ Public Class Form1
         Else
             MsgBox("Debe seleccionar un campo")
         End If
+    End Sub
+    Private Sub cargardgv2()
+        Dim myModel As New MyModel()
+        Me.DataGridView2.DataSource = myModel.Details.ToList
+
     End Sub
 End Class
