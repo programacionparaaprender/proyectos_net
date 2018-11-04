@@ -33,6 +33,9 @@ Partial Class Form1
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Button6 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -117,6 +120,9 @@ Partial Class Form1
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.Button6)
+        Me.TabPage1.Controls.Add(Me.Button5)
+        Me.TabPage1.Controls.Add(Me.Button4)
         Me.TabPage1.Controls.Add(Me.DataGridView2)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
@@ -148,6 +154,42 @@ Partial Class Form1
         Me.DataGridView2.Size = New System.Drawing.Size(469, 150)
         Me.DataGridView2.TabIndex = 0
         '
+        'Button4
+        '
+        Me.Button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray
+        Me.Button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro
+        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button4.Location = New System.Drawing.Point(315, 221)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(104, 40)
+        Me.Button4.TabIndex = 1
+        Me.Button4.Text = "Eliminar"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'Button5
+        '
+        Me.Button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray
+        Me.Button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro
+        Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button5.Location = New System.Drawing.Point(195, 221)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(104, 40)
+        Me.Button5.TabIndex = 2
+        Me.Button5.Text = "Modificar"
+        Me.Button5.UseVisualStyleBackColor = True
+        '
+        'Button6
+        '
+        Me.Button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray
+        Me.Button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro
+        Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button6.Location = New System.Drawing.Point(75, 221)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(104, 40)
+        Me.Button6.TabIndex = 3
+        Me.Button6.Text = "Agregar"
+        Me.Button6.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -176,4 +218,7 @@ Partial Class Form1
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents DataGridView2 As DataGridView
+    Friend WithEvents Button6 As Button
+    Friend WithEvents Button5 As Button
+    Friend WithEvents Button4 As Button
 End Class

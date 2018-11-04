@@ -9,6 +9,7 @@ Public Class Form1
     Private campoSeleccionado As Integer = 0
     Private cadenaConexion As String = ConfigurationManager.ConnectionStrings("CadenaConexion").ConnectionString()
     Private myDetail As Details
+    Private details As List(Of Details)
     Public Sub New()
 
         ' This call is required by the designer.
@@ -115,10 +116,10 @@ Public Class Form1
     End Sub
     Private Sub Refresca()
         MostrarEstructuraProcedimiento()
+        Me.cargardgv2()
     End Sub
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        MostrarEstructuraProcedimiento()
-        Me.cargardgv2()
+        Me.Refresca()
     End Sub
 
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
@@ -159,6 +160,59 @@ Public Class Form1
     Private Sub cargardgv2()
         Dim myModel As New MyModel()
         Me.DataGridView2.DataSource = myModel.Details.ToList
+        Me.details = myModel.Details.ToList
+        'myModel.Details.Find()
+        'myModel.SaveChanges()
+    End Sub
 
+    Private Sub DataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellContentClick
+        If e.RowIndex > -1 Then
+            Me.DataGridView2.Rows(e.RowIndex).Selected = True
+        End If
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        Dim data As DataGridViewRow = DataGridView2.CurrentRow
+        Dim entero As Integer = data.Index
+        Dim mymodel As New MyModel
+        Dim id As Integer = Me.details.ElementAt(entero).Id
+        Dim det As Details = MyModel.Details.Find(id)
+        Dialogo1.setText1(det.Descripcion)
+        Dialogo1.setText2(det.Precio)
+        Dialogo1.ShowDialog()
+
+        If Dialogo1.DialogResult = System.Windows.Forms.DialogResult.OK Then
+            det.Descripcion = Dialogo1.getText1
+            det.Precio = Dialogo1.getText2
+            mymodel.SaveChanges()
+            Refresca()
+        End If
+
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        Dim mymodel As New MyModel
+        Dim dialogo1 As New Dialogo1
+        dialogo1.ShowDialog()
+        myDetail = New Details
+        If dialogo1.DialogResult = System.Windows.Forms.DialogResult.OK Then
+            myDetail.Descripcion = dialogo1.getText1
+            myDetail.Precio = dialogo1.getText2
+            mymodel.Details.Add(myDetail)
+            mymodel.SaveChanges()
+            Refresca()
+        End If
+
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        Dim data As DataGridViewRow = DataGridView2.CurrentRow
+        Dim entero As Integer = data.Index
+        Dim mymodel As New MyModel
+        Dim id As Integer = Me.details.ElementAt(entero).Id
+        Dim det As Details = mymodel.Details.Find(id)
+        mymodel.Details.Remove(det)
+        mymodel.SaveChanges()
+        Refresca()
     End Sub
 End Class
