@@ -1,9 +1,50 @@
-﻿Imports System.Data.SqlClient
+﻿Imports System.Configuration
+Imports System.Data.SqlClient
 
 Public Class Form1
+
     Private dt As New DataTable
     Private dr As DataRow
     Private campoSeleccionado As Integer = 0
+    Private cadenaConexion As String = ConfigurationManager.ConnectionStrings("CadenaConexion").ConnectionString()
+    Public Sub New()
+
+        ' This call is required by the designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
+        Me.DataGridView1.AutoGenerateColumns = False
+    End Sub
+    Private Sub Main()
+
+        Using context As New MyDBContext()
+
+            ' Create and save a new Department.
+            Console.Write("Enter a name for a new Department: ")
+            Dim name As String = Console.ReadLine()
+
+            Dim department = New Detail With {.Descripcion = name, .Precio = 200}
+            context.Departments.Add(department)
+            context.SaveChanges()
+
+            ' Display all Departments from the database ordered by name
+            'Dim departments =
+            '    From d In context.Departments
+            '    Order By d.Name
+            '    Select d
+
+            'Console.WriteLine("All Departments in the database:")
+            'For Each department In departments
+            '    Console.WriteLine(department.Name)
+            'Next
+
+        End Using
+
+        'Console.WriteLine("Press any key to exit...")
+        'Console.ReadKey()
+
+    End Sub
+
     Private Sub eliminarProcedure(row As DataRow)
         Dim cadenaConexion As String = "Data Source=BONE\SQLEXPRESS;Initial Catalog=TEST;Integrated Security=True"
         Try
@@ -93,10 +134,13 @@ Public Class Form1
             If dialogo1.DialogResult = System.Windows.Forms.DialogResult.OK Then
                 dr("nombre") = dialogo1.getText1
                 dr("pass") = dialogo1.getText2
+                'If dialogo1.DialogResult = DialogResult.OK Then
                 Me.insertarProcedure(dr)
                 Refresca()
+                'End If
             End If
-
+        Else
+            MsgBox("Debe seleccionar un campo")
         End If
     End Sub
 
@@ -105,6 +149,8 @@ Public Class Form1
             Dim dialogo1 As New Dialogo1
             Me.eliminarProcedure(dr)
             Me.Refresca()
+        Else
+            MsgBox("Debe seleccionar un campo")
         End If
     End Sub
 End Class
