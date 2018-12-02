@@ -215,4 +215,15 @@ Public Class Form1
         mymodel.SaveChanges()
         Refresca()
     End Sub
+
+    Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
+        Dim numero As Integer = Integer.Parse(Me.NumericUpDown1.Value.ToString)
+        Dim rpt As New CrystalDecisions.CrystalReports.Engine.ReportDocument()
+        rpt.Load("C:\Users\alberto\Documents\proyectos_net\proyectos_basic\web\FormGridView\FormGridView\CrystalReport2.rpt")
+
+        rpt.SetParameterValue("@id", numero)
+        'Dim dt As DataTable
+        'rpt.SetDataSource(dt)
+        CrystalReportViewer1.ReportSource = rpt
+    End Sub
 End Class
