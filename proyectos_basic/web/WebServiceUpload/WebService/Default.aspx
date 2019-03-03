@@ -2,15 +2,58 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
+    <style>
+        .botonUpload {
+            color:white;
+            background-color:gray;
+            font-family:Arial;
+            font-weight:bold;
+            width:100px;
+            padding: 5px 5px 5px 5px;
+            font-size:14px;
+            background:url('icons8-attach-10.png') no-repeat;
+            background-position-x:0%;
+            background-position-y:0%;
+            background-position-x:20%;
+            background-position-y:20%;
+            text-align:center;
+        }
+
+    </style>
     
     <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
     <!--<script type="text/javascript" src="Scripts/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>-->
+    <!--https://docs.microsoft.com/en-us/dotnet/api/system.web.ui.webcontrols.fileupload?view=netframework-4.7.2-->
     <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.js"></script>
+    <script runat="server">
 
+        Sub UploadButton_Click(ByVal sender As Object, ByVal e As EventArgs)
+            Dim savePath As String = "..\WebService\File"
+
+            If FileUpload1.HasFile Then
+                Dim fileName As String = FileUpload1.FileName
+                savePath += fileName
+                FileUpload1.SaveAs(savePath)
+                label1.Text = "Your file was saved as " & fileName
+            Else
+                label1.Text = "You did not specify a file to upload."
+            End If
+        End Sub
+</script>
     
+    <div class="botonUpload" id="FileUpload2">Ejemplo </div>
+            <asp:FileUpload CssClass="botonUpload" ID="FileUpload1" runat="server" />
+            <asp:label ID="label1" runat="server"></asp:label>
+            <asp:Button id="UploadButton" 
+                  Text="Upload file"
+                    OnClick="UploadButton_Click"
+                    runat="server">
+            </asp:Button>
+
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
+             
        <div class="jumbotron">
         <button onclick="dowork()" class="btn btn-primary">DoWork</button>
         <button onclick="dosquare()" class="btn btn-primary">DoSquare</button>
