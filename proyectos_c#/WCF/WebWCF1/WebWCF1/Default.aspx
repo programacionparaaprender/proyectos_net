@@ -2,8 +2,10 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
-
-    <div class="jumbotron">
+    <!-- https://docs.microsoft.com/en-us/dotnet/api/system.web.ui.updatepanel?view=netframework-3.5 -->
+    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+        <ContentTemplate>
+       <div class="jumbotron">
         <button onclick="dowork()" class="btn btn-primary">DoWork</button>
         <button onclick="dosquare()" class="btn btn-primary">DoSquare</button>
         <input type="text" id="squareValue"/>
@@ -14,7 +16,11 @@
         <button onclick="doaddvalues()" class="btn btn-primary">DoAddValue</button>
         
 
-    </div>
+    </div>             
+       </ContentTemplate>
+    </asp:UpdatePanel>
+
+
     <script type="text/javascript">
         function dowork() {
             //alert("Hello");
@@ -35,7 +41,7 @@
             //alert("Hello");
             var value = $('#squareValue').val();
             $.ajax({
-                url: "Service/Service1.svc/DosAddValues",
+                url: "Service/Service1.svc/Dosquare",
                 type: "POST",
                 data: JSON.stringify(value),
                 dataType: "json",
