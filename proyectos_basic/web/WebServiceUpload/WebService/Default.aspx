@@ -2,9 +2,16 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-    <script type="text/javascript" src="Scripts/jquery-1.10.2.min.js"></script>
+    
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+    <!--<script type="text/javascript" src="Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>-->
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.js"></script>
 
-    <div class="jumbotron">
+    
+    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+        <ContentTemplate>
+       <div class="jumbotron">
         <button onclick="dowork()" class="btn btn-primary">DoWork</button>
         <button onclick="dosquare()" class="btn btn-primary">DoSquare</button>
         <input type="text" id="squareValue"/>
@@ -15,7 +22,12 @@
         <button onclick="doaddvalues()" class="btn btn-primary">DoAddValue</button>
         
 
-    </div>
+    </div>             
+       </ContentTemplate>
+    </asp:UpdatePanel>
+
+    
+
     <script type="text/javascript">
         function dowork() {
             //alert("Hello");
@@ -36,7 +48,7 @@
             //alert("Hello");
             var value = $('#squareValue').val();
             $.ajax({
-                url: "Service/Service1.svc/DosAddValues",
+                url: "Service/Service1.svc/Dosquare",
                 type: "POST",
                 data: JSON.stringify(value),
                 dataType: "json",
