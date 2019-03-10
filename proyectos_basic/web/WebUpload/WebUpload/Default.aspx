@@ -7,15 +7,15 @@
         Sub UploadButton_Click(ByVal sender As Object, ByVal e As EventArgs)
             'Dim savePath As String = "/File/" ' "..\WebService\File"
 
-            'If FileUpload1.HasFile Then
-            Dim fileName As String = FileUpload1.FileName
-            'savePath += fileName
-            'FileUpload1.SaveAs(savePath)
-            FileUpload1.SaveAs(Server.MapPath("~/File/" + fileName))
-            label1.Text = "Your file was saved as " & fileName
-            'Else
-            '    label1.Text = "You did not specify a file to upload."
-            'End If
+            If FileUpload1.HasFile Then
+                Dim fileName As String = FileUpload1.FileName
+                'savePath += fileName
+                'FileUpload1.SaveAs(savePath)
+                FileUpload1.SaveAs(Server.MapPath("~/File/" + fileName))
+                label1.Text = "Your file was saved as " & fileName
+            Else
+                label1.Text = "You did not specify a file to upload."
+            End If
 
 
         End Sub

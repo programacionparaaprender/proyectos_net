@@ -1,0 +1,4 @@
+https://codepedia.info/generic-handler-ashx-file-post-send-json-data-parameters-in-asp-net-c-jquery/
+
+
+https://docs.microsoft.com/en-us/dotnet/framework/wcf/feature-details/how-to-serialize-and-deserialize-json-data
