@@ -1,0 +1,8 @@
+﻿
+
+Página donde enseñan comando para descargar ajax
+
+https://www.nuget.org/packages/AjaxControlToolkit/
+
+<cc1:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">
+    </cc1:ToolkitScriptManager>
