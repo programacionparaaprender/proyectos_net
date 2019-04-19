@@ -1,0 +1,9 @@
+﻿
+
+https://codepen.io/arsinak/pen/eFDGw/
+
+
+
+PM> add-migration AddBookModel
+
+update-database

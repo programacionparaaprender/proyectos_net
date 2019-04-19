@@ -1,0 +1,80 @@
+dotnet new mvc
+
+dotnet run
+
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+dotnet add package Microsoft.EntityFrameworkCore.Design	
+
+dotnet add package Microsoft.EntityFrameworkCore --version 2.2.4
+dotnet ef migrations add AddBookModel
+dotnet ef database update
+
+
+dotnet restore
+dotnet ef
+
+dotnet ef database update InitialCreate
+dotnet ef database update 20180904195021_InitialCreate
+
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.0.0-preview-19075-0444" />
+  </ItemGroup>
+
+</Project>
+
+
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.0.0-preview-19075-0444" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.2.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.2.4">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+
+</Project>
+
+{
+  "ConnectionStrings":{
+    "DefaultConnection":
+    "Server = (localdb)\\mssqllocaldb;Database=QuirkyBookProject;Integrated Security=True; Trusted_Connection=True;"
+  },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Warning",
+      "Microsoft.Hosting.Lifetime": "Information"
+    }
+  },
+  "AllowedHosts": "*"
+}
+
+
+@*------HTML Helper----*@
+@Html.Label("FirstName","FirstName: ", new {@class = "form-control"})
+@*------TAG HELPER-------*@
+<label asp-for="FirstName" class="col-md-2 control-label"></label>
+
+@*-- HTML Helper ---*@
+@using (Html.BeginForm("Index","Users",FormMethod.Post,new {@class = "form-horizontal"}))
+{
+
+}
+
+@*---TAG HELPER--*@
+<form asp-controller="Users" asp-action="Index" method="post" class="form-horizontal">
+    
+</form>
