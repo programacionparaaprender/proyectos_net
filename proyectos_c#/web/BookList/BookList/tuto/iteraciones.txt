@@ -7,3 +7,8 @@ https://codepen.io/arsinak/pen/eFDGw/
 PM> add-migration AddBookModel
 
 update-database
+
+por agregar parametro de required a name
+add-migration updateNameProperty
+
+update-database
