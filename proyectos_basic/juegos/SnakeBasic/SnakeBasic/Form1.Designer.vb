@@ -30,7 +30,8 @@ Partial Class Form1
         '
         'canvas
         '
-        Me.canvas.Location = New System.Drawing.Point(39, 22)
+        Me.canvas.Location = New System.Drawing.Point(13, 13)
+        Me.canvas.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.canvas.Name = "canvas"
         Me.canvas.Size = New System.Drawing.Size(567, 285)
         Me.canvas.TabIndex = 0
@@ -42,12 +43,13 @@ Partial Class Form1
         '
         'Form1
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(649, 370)
+        Me.ClientSize = New System.Drawing.Size(610, 331)
         Me.Controls.Add(Me.canvas)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "Form1"
-        Me.Text = "Form1"
+        Me.Text = "Ventana de juego vb.net"
         CType(Me.canvas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 

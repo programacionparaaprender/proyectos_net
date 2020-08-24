@@ -11,7 +11,7 @@
     Public Function generarx()
         'entre 0 y 500
         'Size(567, 285)
-        Dim tam As Integer = 567 / 10
+        Dim tam As Integer = 467 / 10
         Dim random As Random = New Random()
         Dim num As Integer = random.Next(0, tam) * 10
         Return num

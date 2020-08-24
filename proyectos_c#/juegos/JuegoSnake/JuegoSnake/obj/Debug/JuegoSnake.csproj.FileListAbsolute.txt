@@ -1,0 +1,9 @@
+C:\Users\Bus209\Documents\htdocs\proyectos_net\proyectos_c#\juegos\JuegoSnake\JuegoSnake\bin\Debug\JuegoSnake.exe.config
+C:\Users\Bus209\Documents\htdocs\proyectos_net\proyectos_c#\juegos\JuegoSnake\JuegoSnake\bin\Debug\JuegoSnake.exe
+C:\Users\Bus209\Documents\htdocs\proyectos_net\proyectos_c#\juegos\JuegoSnake\JuegoSnake\bin\Debug\JuegoSnake.pdb
+C:\Users\Bus209\Documents\htdocs\proyectos_net\proyectos_c#\juegos\JuegoSnake\JuegoSnake\obj\Debug\JuegoSnake.csprojAssemblyReference.cache
+C:\Users\Bus209\Documents\htdocs\proyectos_net\proyectos_c#\juegos\JuegoSnake\JuegoSnake\obj\Debug\JuegoSnake.Form1.resources
+C:\Users\Bus209\Documents\htdocs\proyectos_net\proyectos_c#\juegos\JuegoSnake\JuegoSnake\obj\Debug\JuegoSnake.Properties.Resources.resources
+C:\Users\Bus209\Documents\htdocs\proyectos_net\proyectos_c#\juegos\JuegoSnake\JuegoSnake\obj\Debug\JuegoSnake.csproj.GenerateResource.cache
+C:\Users\Bus209\Documents\htdocs\proyectos_net\proyectos_c#\juegos\JuegoSnake\JuegoSnake\obj\Debug\JuegoSnake.exe
+C:\Users\Bus209\Documents\htdocs\proyectos_net\proyectos_c#\juegos\JuegoSnake\JuegoSnake\obj\Debug\JuegoSnake.pdb

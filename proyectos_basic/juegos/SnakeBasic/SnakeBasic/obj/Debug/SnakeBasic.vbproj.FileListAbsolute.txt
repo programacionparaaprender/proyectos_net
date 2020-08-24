@@ -1,0 +1,11 @@
+C:\Users\Bus209\Documents\htdocs\proyectos_net\proyectos_basic\juegos\SnakeBasic\SnakeBasic\bin\Debug\SnakeBasic.exe.config
+C:\Users\Bus209\Documents\htdocs\proyectos_net\proyectos_basic\juegos\SnakeBasic\SnakeBasic\bin\Debug\SnakeBasic.exe
+C:\Users\Bus209\Documents\htdocs\proyectos_net\proyectos_basic\juegos\SnakeBasic\SnakeBasic\bin\Debug\SnakeBasic.pdb
+C:\Users\Bus209\Documents\htdocs\proyectos_net\proyectos_basic\juegos\SnakeBasic\SnakeBasic\bin\Debug\SnakeBasic.xml
+C:\Users\Bus209\Documents\htdocs\proyectos_net\proyectos_basic\juegos\SnakeBasic\SnakeBasic\obj\Debug\SnakeBasic.vbprojAssemblyReference.cache
+C:\Users\Bus209\Documents\htdocs\proyectos_net\proyectos_basic\juegos\SnakeBasic\SnakeBasic\obj\Debug\SnakeBasic.Form1.resources
+C:\Users\Bus209\Documents\htdocs\proyectos_net\proyectos_basic\juegos\SnakeBasic\SnakeBasic\obj\Debug\SnakeBasic.Resources.resources
+C:\Users\Bus209\Documents\htdocs\proyectos_net\proyectos_basic\juegos\SnakeBasic\SnakeBasic\obj\Debug\SnakeBasic.vbproj.GenerateResource.cache
+C:\Users\Bus209\Documents\htdocs\proyectos_net\proyectos_basic\juegos\SnakeBasic\SnakeBasic\obj\Debug\SnakeBasic.exe
+C:\Users\Bus209\Documents\htdocs\proyectos_net\proyectos_basic\juegos\SnakeBasic\SnakeBasic\obj\Debug\SnakeBasic.xml
+C:\Users\Bus209\Documents\htdocs\proyectos_net\proyectos_basic\juegos\SnakeBasic\SnakeBasic\obj\Debug\SnakeBasic.pdb
